@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>檢索結果 | 陰謀檔案</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="conspiracy-theme">
+    <nav class="top-nav">
+        <a href="2016.html">← 返回總部</a>
+        <div class="system-status">SYSTEM: ONLINE / ACCESS GRANTED</div>
+    </nav>
+
+    <main class="results-container">
+        <header class="list-header">
+            <h1>檢索結果列表</h1>
+            <div class="list-controls">
+                <span>排序依據：</span>
+                <select id="sort-order" onchange="renderResults()">
+                    <option value="total_desc">總收入 [高 → 低]</option>
+                    <option value="total_asc">總收入 [低 → 高]</option>
+                    <option value="corp_desc">企業捐贈比例</option>
+                </select>
+            </div>
+        </header>
+
+        <div id="quick-summary" class="summary-bar">
+            正在統計金流數據...
+        </div>
+
+        <div id="results-list" class="results-list">
+            </div>
+
+        <div class="pagination">
+            <button disabled>PREV</button>
+            <span>PAGE 01 / 15</span>
+            <button>NEXT</button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        // 頁面載入後抓取數據並顯示
+        window.onload = () => loadAndDisplayResults();
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE LEDGER | 政治獻金陰謀檔案</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="conspiracy-theme">
+    <div class="scanline"></div>
+    
+    <header class="hero">
+        <div class="warning-tag">TOP SECRET / CLASSIFIED</div>
+        <h1 class="glitch-text" data-text="追蹤金流。揭開真相。">追蹤金流。揭開真相。</h1>
+        <p class="narrative">
+            在權力運作的陰影下，每一筆捐款都是一張隱形的選票。<br>
+            2016 年的檔案已經解密。誰在購買影響力？誰在幕後操盤？<br>
+            <strong>跟隨金錢的足跡，你會發現真相。</strong>
+        </p>
+
+        <div class="search-vault">
+            <div class="filter-group">
+                <select id="filter-party">
+                    <option value="">-- 所有黨派 --</option>
+                    <option value="民主進步黨">民主進步黨</option>
+                    <option value="中國國民黨">中國國民黨</option>
+                    <option value="時代力量">時代力量</option>
+                </select>
+                <select id="filter-region">
+                    <option value="">-- 所有地區 --</option>
+                    <option value="台北市">台北市</option>
+                    <option value="新北市">新北市</option>
+                    <option value="新竹市">新竹市</option>
+                    <option value="高雄市">高雄市</option>
+                </select>
+                <button onclick="executeSearch()" class="search-btn">執行檢索 [ENTER]</button>
+            </div>
+        </div>
+
+        <div class="example-tags">
+            快速標籤：
+            <a href="2016_result.html?q=柯建銘">#新竹金庫</a>
+            <a href="2016_result.html?q=營利事業">#企業大手筆</a>
+            <a href="2016_result.html?elected=1">#當選者名單</a>
+        </div>
+    </header>
+
+    <section class="editors-picks">
+        <h2>解密檔案：編輯精選</h2>
+        <div class="grid">
+            <div class="case-card" onclick="location.href='2016_candidate.html?name=柯建銘'">
+                <div class="photo-placeholder">IMAGE REDACTED</div>
+                <h3>檔案：柯建銘</h3>
+                <p>2016 年吸金王，營利事業捐贈佔比超過 52%...</p>
+                <span class="status-alert">DEEP DIVE ></span>
+            </div>
+            <div class="case-card" onclick="location.href='2016_candidate.html?name=邱志偉'">
+                <div class="photo-placeholder">IMAGE REDACTED</div>
+                <h3>檔案：邱志偉</h3>
+                <p>高雄指標性獻金檔案，企業捐贈數高達 133 間...</p>
+                <span class="status-alert">DEEP DIVE ></span>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+    <script>
+        function executeSearch() {
+            const party = document.getElementById('filter-party').value;
+            const region = document.getElementById('filter-region').value;
+            location.href = `2016_result.html?party=${encodeURIComponent(party)}&region=${encodeURIComponent(region)}`;
+        }
+    </script>
+</body>
+</html>

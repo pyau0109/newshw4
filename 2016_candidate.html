@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>個人檔案 | 陰謀檔案</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="conspiracy-theme">
+    <div class="candidate-profile">
+        <div class="profile-header">
+            <h1 id="can-name">姓名載入中...</h1>
+            <div class="id-badge" id="can-party">PARTY ID: UNKNOWN</div>
+        </div>
+
+        <div class="ranking-summary">
+            <div class="rank-item">
+                <span class="label">全國排名</span>
+                <span class="value" id="rank-total">--</span>
+            </div>
+            <div class="rank-item">
+                <span class="label">黨內排名</span>
+                <span class="value" id="rank-party">--</span>
+            </div>
+            <div class="rank-item">
+                <span class="label">選區排名</span>
+                <span class="value" id="rank-dist">--</span>
+            </div>
+        </div>
+
+        <div class="donation-breakdown">
+            <h2>捐款明細檔案</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>類別</th>
+                        <th>金額 (TWD)</th>
+                        <th>佔比</th>
+                    </tr>
+                </thead>
+                <tbody id="donation-body">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script>window.onload = () => loadCandidateDetail();</script>
+</body>
+</html>
